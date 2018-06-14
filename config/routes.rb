@@ -1,3 +1,7 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+    root 'recipes#index'
+
+    resources :ingredients
+    resources :recipes
+    resources :recipe_ingredients, only: [:new, :create, :destroy]
 end

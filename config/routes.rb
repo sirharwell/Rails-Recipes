@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'ingredients/index'
+
+  get 'ingredients/new'
+
+  get 'ingredients/edit'
+
   get 'recipes/index'
 
   get 'recipes/show'

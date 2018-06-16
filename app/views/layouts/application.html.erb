@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Recipes</title>
+    <title>DplRecipes</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
@@ -9,6 +9,26 @@
   </head>
 
   <body>
-    <%= yield %>
+
+    <nav>
+      <div class="nav-wrapper">
+        <a href="/" class="brand-logo">DPL Recipes</a>
+        <ul id="nav-mobile" class="right hide-on-med-and-down">
+          <li> <%= link_to 'Recipes', recipes_path %> </li>
+          <li> <%= link_to 'Ingredients', ingredients_path %> </li>
+          <li> <%= link_to 'Add Ingredient To Recipe', new_recipe_ingredient_path %> </li>
+        </ul>
+      </div>
+    </nav>
+
+    <% flash.each do |key, value| %>
+      <div class="flash <%= key %>">
+        <%= value %>
+      </div>
+    <% end %>
+
+    <div class='container'>
+      <%= yield %>
+    </div>
   </body>
 </html>
